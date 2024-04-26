@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        .sign-up-wrapper {
+            background-color: #333;
+            /* Dark background color */
+            color: #fff;
+            /* White text color */
+        }
+
+        /* Styling for Delete picture button */
+        .bttn-bordered {
+            background-color: #fff;
+            /* White background color */
+            border: 1px solid #6B46C1;
+            /* Dark purple border */
+            color: #6B46C1;
+            /* Dark purple text color */
+        }
+        .selected {
+    background-color: #6B46C1; /* Example background color for selected state */
+    color: #fff; /* Example text color for selected state */
+}
+    </style>
+<script>
+   const handelClick = (event) => {
+    try {
+        const clickedListItem = event.target.closest('li');
+
+        const listItems = document.querySelectorAll('ul.ml-10 li');
+        listItems.forEach(item => {
+            item.style.cssText = ''; 
+        });
+    
+        clickedListItem.style.cssText = `
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 2px solid #6B46C1;
+            color: #fff; 
+            
+        `;
+
+        console.log("sdsds");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+</script>
+   
+</head>
+<!-- change body color  -->
+<body class="bg-slate-600">
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="img/herald-white-logo.png" class="h-10" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+            </a>
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                    id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+                    data-dropdown-placement="bottom">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="w-8 h-8 rounded-full" src="img/user-1.jpg" alt="user photo">
+                </button>
+                <!-- Dropdown menu -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    id="user-dropdown">
+                    <div class="px-4 py-3">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-2" aria-labelledby="user-menu-button">
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                out</a>
+                        </li>
+                    </ul>
+                </div>
+                <button data-collapse-toggle="navbar-user" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-user" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+
+    <div class="flex">
+
+        <div class="w-1/5% rounded-lg ml-10">
+            <h1 class="text-white font-bold text-4xl font-semi font-weight-700 px-10 py-10  ml-4">Settings</h1>
+
+        
+            <ul class="ml-10">
+                <li onclick="handelClick(event)" class="main-menu-btn inline-flex items-center gap-2 py-2 px-4 bg-light-purple mb-5">
+                    <div class="text-wrapper-8 font-medium text-lg text-white">Public profile</div>
+                </li>
+                <br>
+                <li onclick="handelClick(event)" class="free-designs-wrapper inline-flex items-center gap-2 py-2 px-4 mb-5 mr-5">
+                    <div class="free-designs opacity-80 font-medium text-lg text-white">Change Password</div>
+                </li>
+                <br>
+                <li onclick="handelClick(event)" class="free-designs-wrapper inline-flex items-center gap-2 py-2 px-4 mb-5 mr-5">
+                    <div class="free-designs opacity-80 font-medium text-lg text-white">Log Out</div>
+                </li>
+                <br>
+            </ul>
+            
+            
+        </div>
+
+
+        <section class="w-3/5 rounded-lg ml-10">
+            <h1 class="text-white font-bold text-3xl font-serif px-10 py-10"
+                style="margin-left: 100px; margin-top: 82px;">Public Profile</h1>
+
+            <div class="relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Profile Image" class="rounded-full object-cover"
+                    style="margin-left: 150px; margin-top: 30px; width: 200px; height: 200px;">
+
+                <!-- Container for buttons -->
+                <div class="absolute top-12 left-0 " style="margin-left: 400px;">
+                    <!-- Change picture button -->
+                    <div
+                        class="sign-up-wrapper bg-gray-800 inline-flex items-center justify-center gap-2 p-3 bg-dark rounded-lg cursor-pointer mb-5 hover:opacity-80">
+                        <div class="text-wrapper-6 font-medium text-white text-base text-center">Change picture</div>
+                    </div>
+                    <!-- Delete picture button -->
+                    <div
+                        class="bttn-bordered flex items-center gap-2 py-2 px-4 bg-[#BF120D] rounded-lg border border-dark-purple cursor-pointer hover:opacity-70">
+                        <div class="text-wrapper-8 font-medium text-base text-white">Delete picture</div>
+                    </div>
+
+                </div>
+
+                <div class="profile-form w-4/5 mt-10 "style="margin-left: 158px;" >
+                    <div class="mb-6 flex">
+                        <div class="w-1/2 mr-2">
+                            <label for="firstname" class="block text-lg font-medium text-gray-400 mb-1">First
+                                Name</label>
+                            <input type="text" id="firstname" name="firstname"
+                                class="w-full h-10 form-input rounded-md border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-gray-800 text-gray-300" style="height: 50px;">
+                        </div>
+                        <div class="w-1/2 ml-2">
+                            <label for="lastname" class="block text-lg font-medium text-gray-400 mb-1">Last Name</label>
+                            <input type="text" id="lastname" name="lastname"
+                                class="w-full h-10 form-input rounded-md border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-gray-800 text-gray-300" style="height: 50px;">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-lg font-medium text-gray-400 mb-1">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full h-10 form-input rounded-md border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-gray-800 text-gray-300"style="height: 50px;">
+                    </div>
+                    <div class="mb-6">
+                        <label for="username" class="block text-lg font-medium text-gray-400 mb-1">Username</label>
+                        <input type="text" id="username" name="username"
+                            class="w-full h-10 form-input rounded-md border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-gray-800 text-gray-300"style="height: 50px;">
+                    </div>
+                    <div class="mb-6">
+                        <label for="bio" class="block text-lg font-medium text-gray-400 mb-1">Bio</label>
+                        <textarea id="bio" name="bio"
+                            class="w-full form-textarea rounded-md border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-gray-800 text-gray-300" style="height: 150px;"></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ////////////// -->
+            <div class="bg-gray-800 h-screen flex justify-center items-center">
+                <div class="w-full max-w-md bg-[#475569] p-8 rounded-lg shadow-md">
+                  <h2 class="text-2xl text-white font-bold mb-4">Edit Profile</h2>
+                  <form>
+                    <div class="mb-4">
+                      <label
+                        class="block text-gray-400 text-sm font-bold mb-2 text-white"
+                        for="password"
+                      >
+                        Password
+                      </label>
+                      <input
+                        id="password"
+                        type="password"
+                        placeholder="Enter your current password"
+                        required
+                        class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <label
+                        class="block text-gray-400 text-sm font-bold mb-2"
+                        for="newPassword"
+                      >
+                        New Password
+                      </label>
+                      <input
+                        id="newPassword"
+                        type="password"
+                        placeholder="Enter your new password"
+                        required
+                        class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                      />
+                    </div>
+                    <div class="mb-6">
+                      <label
+                        class="block text-gray-400 text-sm font-bold mb-2"
+                        for="confirmPassword"
+                      >
+                        Confirm Password
+                      </label>
+                      <input
+                        id="confirmPassword"
+                        type="password"
+                        placeholder="Confirm your new password"
+                        required
+                        class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="ml-20 bg-blue-500 hover:opacity-80 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                      Save Changes
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+        </section>
+
+
+</body>
+
+</html>
